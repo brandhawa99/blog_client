@@ -26,12 +26,17 @@
   padding:5px 5px;
   font-family: 'Kanit', sans-serif;
   color: black;
+  background-color: white;
+  border-radius: 1rem;
+  transition: border-radius 1000ms ease-out;
+  transition: background-color 1s linear;
   font-weight: 400;
 }
 .button:hover{
-  background-color: black;
+  background-color: #fca311;
   border-radius: .5rem;
-  color: white;
-  transition: background-color 600ms;
+  color: black;
+  transition: background-color 1s ease-in;
   transition: color 300ms;
+  transition: border-radius 500ms linear;
 }
