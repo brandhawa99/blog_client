@@ -10,7 +10,7 @@ export default function Home() {
   const fetch_index = async() =>{
       const data = await fetch('http://localhost:3001/')
       const post = await data.json();
-      console.log(post);
+     console.log(post);
       setPosts(post);
       
   }
@@ -34,9 +34,12 @@ export default function Home() {
       {/*5 recent posts section*/}
       <section>
         <h1>Recent Blog Posts</h1>
-        {(posts) ? <div>No Blog Posts</div>: <dix>Here are the posts</dix>}
+        {/* {(posts.length>=0) ? <div>No Blog Posts</div>: <dix>Here are the posts</dix>} */}
+        {(posts.length>0)?<div>{posts}</div>:<div>There are currently no posts</div>}
       </section>
     </div>
 
   )
 }
+
+
