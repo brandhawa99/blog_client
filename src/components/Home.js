@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import hero from '../icons/hero.svg'
 import '../styles/Home.css'
+import PostHolder from './PostHolder';
 
 
 export default function Home() {
@@ -8,11 +9,9 @@ export default function Home() {
 
   //get the 5 most recent post from database
   const fetch_index = async() =>{
-      const data = await fetch('http://localhost:3001/')
-      const post = await data.json();
-     console.log(post);
-      setPosts(post);
-      
+    const data = await fetch('http://localhost:3001/')
+    const post = await data.json();
+    setPosts(post);
   }
 
   useEffect(()=>{
@@ -30,12 +29,19 @@ export default function Home() {
         </div>
         <img src={hero} alt='cartoon of person looking at a blog post' />
       </section>
-
-      {/*5 recent posts section*/}
-      <section>
+           {/*5 recent posts section*/}
+      <section className='posts'>
         <h1>Recent Blog Posts</h1>
-        {/* {(posts.length>=0) ? <div>No Blog Posts</div>: <dix>Here are the posts</dix>} */}
-        {(posts.length>0)?<div>{posts}</div>:<div>There are currently no posts</div>}
+        {(posts.length>=0) ? 
+        <div className='wrapper-grid'>
+          {
+        posts.map(post =>{
+          const {title, author, blog,_id} = post;
+          return <PostHolder key={_id} title={title} author={author} blog={blog} timestamp={post.timestamp} _id={_id} />
+        })
+      }
+    </div>
+          :<dix>There are no posts</dix>}
       </section>
     </div>
 
