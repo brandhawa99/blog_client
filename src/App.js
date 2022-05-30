@@ -2,6 +2,7 @@ import './styles/App.css';
 import Nav from './components/Nav';
 import Home from './components/Home';
 import Posts from './components/Posts';
+import Post from './components/Post'
 import {BrowserRouter as Router , Route, Routes} from 'react-router-dom';
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path = '/posts' element={<Posts />} />
-          <Route path = '/posts/:id' element={<Posts />} />
+          <Route path = '/posts/:id' element={<Post />} />
         </Routes>
       </div>
     </Router>
