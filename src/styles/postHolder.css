@@ -1,0 +1,19 @@
+
+.post-container{
+  border: 1px solid black;
+  padding: 5px 10px;
+  min-width: 300px;
+  text-overflow: ellipsis;
+  max-height: 95px;
+  overflow: hidden;
+}
+.blog{
+  line-height: 30px;
+}
+
+.footer{
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: space-between;
+}

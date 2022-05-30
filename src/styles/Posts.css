@@ -1,0 +1,11 @@
+.wrapper-grid{
+  width: 100%;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 20rem));
+  justify-content: center;
+}
+
+.posts-main{
+  width: 100%;
+}
