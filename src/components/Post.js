@@ -1,10 +1,9 @@
 import {React, useState, useEffect} from 'react'
-import {useNavigate, useParams} from 'react-router-dom'
+import {Navigate, useParams} from 'react-router-dom'
 import '../styles/Post.css'
 
 
 export default function Post() {
-const navigate = useNavigate();
 const params = useParams();
 const [postdata, setPostData ] = useState();
 const [commentArr, setCommentArr] = useState([]);
@@ -18,7 +17,7 @@ const[userComment, setUserComment] = useState({
  * Get all the data for the blog
  */
 const PostDetails = async() =>{
-  const data = await fetch(`http://localhost:3001/posts/${params.id}`)
+  const data = await fetch(`https://agile-mesa-41864.herokuapp.com/posts/${params.id}`)
   const post = await data.json();
   setPostData(post.post);
   setCommentArr(post.comments);
@@ -39,6 +38,7 @@ const setCommentData = (e) =>{
  * Submit submit the users comment
  */
 const submitComment = async(e) =>{
+  e.preventDefault()
     let response = await fetch(`https://agile-mesa-41864.herokuapp.com/posts/${params.id}`,{
     method:"POST",
     mode:'cors',
@@ -51,22 +51,27 @@ const submitComment = async(e) =>{
       comment :userComment.comment,
     }),
   });
-  console.log(response);
-
+  setUserComment({
+    name:"",
+    comment:""
+  })
   if(response.ok){
     let data = response.json();
-    console.log(data);
   }
   return false;
 }
-const wrapperFunc = (e) =>{
-  submitComment(e)
-  navigate('/posts/'+params.id)
+
+const wrapper = (e) =>{
+  submitComment(e);
+  setUserComment({
+    name:"",
+    comment:""
+  })
 }
 
 useEffect(()=>{
   PostDetails();
-},[])
+},[userComment])
 
   
   return (
@@ -88,23 +93,23 @@ useEffect(()=>{
         <input name='name' type={'text'} value={userComment.name} onChange={(e)=>setCommentData(e)} ></input>
         <label>Comment:</label>
         <input name='comment'type={'text'} value={userComment.comment} onChange={(e)=>setCommentData(e)} />
-        <button onClick={(e)=>wrapperFunc(e)}>Post</button>
+        <button onClick={(e)=>wrapper(e)}>Post</button>
       </form>
-      <div className='comment-container'>
+        <div className='comment-container'>
 
-      {
-        commentArr.length<=0 ? <div>There are no comments</div>:
-        commentArr.map(com =>{
-          return(
-            <div className='comment-comment' key={com._id}>
-              <div>Username: {com.name }</div>
-              <div>Message: {com.message} </div>
-            </div>
-        )})
-        
-        
-      }
-      </div>
+        {
+          commentArr.length<=0 ? <div>There are no comments</div>:
+          commentArr.map(com =>{
+            return(
+              <div className='comment-comment' key={com._id}>
+                <div>Username: {com.name }</div>
+                <div>Message: {com.message} </div>
+              </div>
+          )})
+          
+          
+        }
+        </div>
       </div>
   )
 }
