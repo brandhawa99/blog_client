@@ -39,7 +39,7 @@ const setCommentData = (e) =>{
  * Submit submit the users comment
  */
 const submitComment = async(e) =>{
-    let response = await fetch(`http://localhost:3001/posts/${params.id}`,{
+    let response = await fetch(`https://agile-mesa-41864.herokuapp.com/posts/${params.id}`,{
     method:"POST",
     mode:'cors',
     credentials:'same-origin',

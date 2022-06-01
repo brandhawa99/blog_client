@@ -9,7 +9,7 @@ export default function Home() {
 
   //get the 5 most recent post from database
   const fetch_index = async() =>{
-    const data = await fetch('http://localhost:3001/')
+    const data = await fetch('https://agile-mesa-41864.herokuapp.com/')
     const post = await data.json();
     setPosts(post);
   }

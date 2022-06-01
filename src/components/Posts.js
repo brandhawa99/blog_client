@@ -6,7 +6,7 @@ export default function Posts() {
   const [posts, setPosts] = useState();
   const getAllPosts = async() =>{
     try {
-      const data =  await fetch('http://localhost:3001/posts',{
+      const data =  await fetch('https://agile-mesa-41864.herokuapp.com/posts',{
         mode:'cors'
       })
       if(data.ok){
