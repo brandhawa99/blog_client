@@ -2,7 +2,7 @@ import {React, useEffect, useState} from 'react';
 import styles from './Home.module.css';
 import hero from '../../icons/hero.svg';
 import PostHolder from '../PostHolder';
-
+import PostCard from '../PostCard/PostCard';
 const Home = () => {
   const [posts, setPosts] = useState([]);
 
@@ -33,10 +33,10 @@ const Home = () => {
       <img className={styles.heroIcon} src={hero} alt="hero icon"></img>
     </div>
     <div className={styles.posts}>
-    {
+      {
         posts.map(post =>{
-          const {title, author, blog,_id} = post;
-          return <PostHolder key={_id} title={title} author={author} blog={blog} timestamp={post.timestamp} _id={_id} />
+          const {title, author , timestamp, _id} = post; 
+          return <PostCard  key={_id} title={title} date={timestamp} author={author}/>
         })
       }
     </div>
