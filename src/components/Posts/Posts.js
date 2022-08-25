@@ -3,15 +3,20 @@ import PostCard from '../PostCard/PostCard';
 import styles from './Posts.module.css'
 
 export default function Posts() {
+  const link = "https://agile-mesa-41864.herokuapp.com/";
+  const testLink = "http://localhost:3001/posts"
+
+
   const [posts, setPosts] = useState();
   const getAllPosts = async() =>{
     try {
-      const data =  await fetch('https://agile-mesa-41864.herokuapp.com/posts',{
+      const data =  await fetch(testLink,{
         mode:'cors'
       })
       if(data.ok){
         const json = await data.json();
         setPosts(json);
+        console.log(json);
 
       }
     } catch (error) {

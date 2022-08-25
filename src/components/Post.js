@@ -56,7 +56,7 @@ const submitComment = async(e) =>{
     comment:""
   })
   if(response.ok){
-    let data = response.json();
+    let data = await response.json();
   }
   return false;
 }

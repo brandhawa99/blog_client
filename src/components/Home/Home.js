@@ -1,15 +1,17 @@
 import {React, useEffect, useState} from 'react';
 import styles from './Home.module.css';
 import hero from '../../icons/hero.svg';
-import PostHolder from '../PostHolder';
 import PostCard from '../PostCard/PostCard';
 const Home = () => {
+  const link = "https://agile-mesa-41864.herokuapp.com/";
+  const testLink = "http://localhost:3001"
   const [posts, setPosts] = useState([]);
 
   //get the 5 most recent post from database
   const fetch_index = async() =>{
-    const data = await fetch('https://agile-mesa-41864.herokuapp.com/')
+    const data = await fetch(testLink)
     const post = await data.json();
+    console.log(post);
     setPosts(post);
   }
 
@@ -35,7 +37,7 @@ const Home = () => {
     <div className={styles.posts}>
       {
         posts.map(post =>{
-          const {title, author , timestamp, _id} = post; 
+          let {author, timestamp, title, _id} = post; 
           return <PostCard  key={_id} title={title} date={timestamp} author={author}/>
         })
       }
