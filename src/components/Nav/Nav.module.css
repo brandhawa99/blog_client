@@ -14,9 +14,19 @@
   border-radius: .35rem;
 }
 
+.link{
+  text-decoration: none;
+  color: white;
+  background-color: rgba(255, 68, 0, 0);
+  padding: 7px 10px;
+  font-size: 1.3rem;
+  transition: background-color .2s;
+  display: flex;
+}
 .homelink{
   background-color: black;
   font-weight: 800;
+  font-size: 2rem;
 }
 .homelink:hover{
   color: black;
@@ -25,14 +35,6 @@
 
 
 
-.link{
-  text-decoration: none;
-  color: white;
-  background-color: rgba(255, 68, 0, 0);
-  padding: 7px 10px;
-  transition: background-color .2s;
-  display: flex;
-}
 
 .link:hover{
   background-color: orangered;
