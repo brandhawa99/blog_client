@@ -1,9 +1,12 @@
 import {React, useState, useEffect} from 'react'
-import {Navigate, useParams} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 import '../styles/Post.css'
 
 
 export default function Post() {
+  const link = "https://agile-mesa-41864.herokuapp.com/";
+  const testLink = "http://localhost:3001"
+
 const params = useParams();
 const [postdata, setPostData ] = useState();
 const [commentArr, setCommentArr] = useState([]);
@@ -17,7 +20,7 @@ const[userComment, setUserComment] = useState({
  * Get all the data for the blog
  */
 const PostDetails = async() =>{
-  const data = await fetch(`https://agile-mesa-41864.herokuapp.com/posts/${params.id}`)
+  const data = await fetch(`${testLink}/posts/${params.id}`)
   const post = await data.json();
   setPostData(post.post);
   setCommentArr(post.comments);
@@ -41,7 +44,7 @@ const submitComment = async(e) =>{
   e.preventDefault()
     let response = await fetch(`https://agile-mesa-41864.herokuapp.com/posts/${params.id}`,{
     method:"POST",
-    mode:'cors',
+    mode:'no-cors',
     credentials:'same-origin',
     headers:{
       'Content-Type':'application/json',
@@ -57,6 +60,7 @@ const submitComment = async(e) =>{
   })
   if(response.ok){
     let data = await response.json();
+    setPostData(data);
   }
   return false;
 }

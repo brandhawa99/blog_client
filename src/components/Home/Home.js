@@ -38,7 +38,7 @@ const Home = () => {
       {
         posts.map(post =>{
           let {author, timestamp, title, _id} = post; 
-          return <PostCard  key={_id} title={title} date={timestamp} author={author}/>
+          return <PostCard  key={_id} title={title} date={timestamp} author={author} _id={_id}/>
         })
       }
     </div>

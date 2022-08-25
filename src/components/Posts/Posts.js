@@ -4,7 +4,7 @@ import styles from './Posts.module.css'
 
 export default function Posts() {
   const link = "https://agile-mesa-41864.herokuapp.com/";
-  const testLink = "http://localhost:3001/posts"
+  const testLink = "http://localhost:3001/posts/"
 
 
   const [posts, setPosts] = useState();
@@ -14,13 +14,13 @@ export default function Posts() {
         mode:'cors'
       })
       if(data.ok){
-        const json = await data.json();
+        let json = await data.json();
         setPosts(json);
         console.log(json);
 
       }
     } catch (error) {
-      
+      console.error(error);
     }
   }
   useEffect(()=>{
@@ -32,10 +32,13 @@ export default function Posts() {
       {
         (!posts)?<div>There are no posts</div>:
         <div className={styles.postsContainer}> 
-          {posts.map(post=>{
-            const {title, author, blog,_id, timestamp} = post;
-            return <PostCard key={_id} title={title} author={author} blog={blog} date={timestamp} />
-          })}
+          {
+            posts.map(post =>{
+              const {author, timestamp, title, _id} = post; 
+              console.log(_id, "THESE ARE THE IDS");
+              return <PostCard  key={_id} title={title} date={timestamp} author={author} _id={_id}/>
+            })
+          }
         </div>
       }
     </div>
