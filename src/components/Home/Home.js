@@ -11,7 +11,6 @@ const Home = () => {
   const fetch_index = async() =>{
     const data = await fetch(testLink)
     const post = await data.json();
-    console.log(post);
     setPosts(post);
   }
 
