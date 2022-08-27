@@ -35,7 +35,6 @@ export default function Posts() {
           {
             posts.map(post =>{
               const {author, timestamp, title, _id} = post; 
-              console.log(_id, "THESE ARE THE IDS");
               return <PostCard  key={_id} title={title} date={timestamp} author={author} _id={_id}/>
             })
           }
