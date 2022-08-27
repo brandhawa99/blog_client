@@ -1,0 +1,58 @@
+.Home {
+  background-image: url(../../icons//wave.svg);
+  background-repeat: no-repeat;
+  object-fit: contain;
+  width: 100%;
+}
+
+.headerContent{
+  display: flex;
+  padding: 30px 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.text{
+  flex: 1;
+  line-height: 26px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.363);
+  padding: 10px 10px;
+  border-radius: .35rem;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+}
+.text>h1{
+  padding: 10px 0px;
+}
+.text>p{
+  padding: 0px 10px;
+}
+.posts{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.heroIcon{
+  flex: -1;
+  width: 500px;
+}
+
+@media (max-width:800px) {
+  .headerContent{
+    display: flex;
+    flex-direction: column;
+    gap:50px;
+    align-items: center;
+    justify-content: center;
+  }
+  .heroIcon{
+    width:350px;
+  }
+  
+}

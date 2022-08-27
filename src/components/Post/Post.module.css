@@ -1,0 +1,82 @@
+
+.mainContainer{
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.postContainer{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.postData{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.blog{
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  border-top: 2px black solid;
+  width: 100%;
+  padding: 10px 20px;
+  line-height: 28px;
+  text-align: left;
+  border-bottom: 2px black solid;
+  margin: 10px 0px;
+}
+
+.commentForm{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 2px orangered solid;
+  padding: 10px 10px;
+  border-radius: .25rem;
+  color: orangered;
+}
+.commentForm>h2{
+  padding: 20px 0px;
+}
+.inputs{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap:7px;
+  margin-bottom: 20px;
+}
+input{
+  padding: 10px 10px;
+  border-radius: .25rem;
+  border: 2px solid rgba(148, 22, 22, 0);
+  background-color: rgba(255, 68, 0, 0.075);
+}
+input:focus{
+  background-color: rgba(255, 68, 0, 0.144);
+  border: 2px orangered solid;
+}
+button{
+  border: 2px rgba(0, 0, 0, 0) solid;
+  padding: 7px 7px;
+  background-color:rgba(255, 68, 0, 0.301);
+  cursor: pointer;
+  transition: border .3s;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+button:hover{
+  border: 2px orangered solid;
+}
+
+.commentContainer{
+  padding: 10px 20px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+
+}

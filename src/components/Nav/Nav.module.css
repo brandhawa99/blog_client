@@ -1,0 +1,45 @@
+.mainContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  background-color: black;
+  color: white;
+  font-size: 2rem
+}
+.active{
+  background-color: orangered;
+  color: black;
+  padding: 7px 10px;
+  border-radius: .35rem;
+}
+
+.link{
+  text-decoration: none;
+  color: white;
+  background-color: rgba(255, 68, 0, 0);
+  padding: 7px 10px;
+  font-size: 1.3rem;
+  transition: background-color .2s;
+  display: flex;
+}
+.homelink{
+  background-color: black;
+  font-weight: 800;
+  font-size: 2rem;
+}
+.homelink:hover{
+  color: black;
+  background-color: black;
+}
+
+
+
+
+.link:hover{
+  background-color: orangered;
+  color: black;
+  padding: 7px 10px;
+  border-radius: .35rem;
+
+}

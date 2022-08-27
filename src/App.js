@@ -1,8 +1,8 @@
 import './styles/App.css';
-import Nav from './components/Nav';
-import Home from './components/Home';
-import Posts from './components/Posts';
-import Post from './components/Post'
+import Nav from './components/Nav/Nav';
+import Home from './components/Home/Home';
+import Posts from './components/Posts/Posts';
+import Post from './components/Post/Post'
 import {BrowserRouter as Router , Route, Routes} from 'react-router-dom';
 
 function App() {
