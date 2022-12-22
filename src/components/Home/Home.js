@@ -3,7 +3,7 @@ import styles from "./Home.module.css";
 import hero from "../../icons/hero.svg";
 import PostCard from "../PostCard/PostCard";
 const Home = () => {
-  const link = "https://agile-mesa-41864.herokuapp.com/";
+  const link = "https://blog-api-h9xk.onrender.com/";
   const testLink = "http://localhost:3001";
   const [posts, setPosts] = useState([]);
 

@@ -3,7 +3,7 @@ import PostCard from "../PostCard/PostCard";
 import styles from "./Posts.module.css";
 
 export default function Posts() {
-  const link = "https://agile-mesa-41864.herokuapp.com/posts";
+  const link = "https://blog-api-h9xk.onrender.com/posts";
   const testLink = "http://localhost:3001/posts/";
 
   const [posts, setPosts] = useState();

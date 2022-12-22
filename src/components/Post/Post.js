@@ -6,7 +6,7 @@ import Comment from "../Comment/Comment";
 
 export default function Post() {
   const params = useParams();
-  const link = "https://agile-mesa-41864.herokuapp.com/posts/" + params.id;
+  const link = "https://blog-api-h9xk.onrender.com/posts/" + params.id;
   const testLink = "http://localhost:3001/posts/" + params.id;
 
   const [postdata, setPostData] = useState();
